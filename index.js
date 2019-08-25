@@ -29,7 +29,7 @@ app.get("/api/hotels/:id", (req, res) => {
 
 app.post('/api/hotels', function (req, res) {
    const item = req.body;
-   hotels.push(item)
+   hotels.push(item);
    return res.json({message:true});
 });
 
