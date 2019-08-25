@@ -63,7 +63,7 @@ app.put("/api/hotels/:id", (req, res) => {
 
 
 // set port
-app.listen(3000, function () {
+app.listen(80, function () {
     console.log('Node app is running on port 3000');
 });
 
