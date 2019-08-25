@@ -29,7 +29,7 @@ app.get("/api/hotels/:id", (req, res) => {
 
 app.post('/api/hotels', function (req, res) {
    const item = req.body;
-   data.push(item)
+   hotels.push(item)
    return res.json({message:true});
 });
 
@@ -38,7 +38,7 @@ app.delete("/api/hotels/:id", (req, res) => {
     const filtered_list = data.filter(item => item.id !== itemId);
  
     // replace old list with new one
-    data = filtered_list;
+    hotels = filtered_list;
  
     return res.json({message:true});
  });
@@ -49,14 +49,14 @@ app.put("/api/hotels/:id", (req, res) => {
 
     const updatedListItems = [];
     // loop through list to find and replace one item
-    data.forEach(oldItem => {
+    hotels.forEach(oldItem => {
        if (oldItem.id === itemId) {
           updatedListItems.push(item);
        } else {
           updatedListItems.push(oldItem);
        }
     });
-    data = updatedListItems;
+    hotels = updatedListItems;
     return res.json({message:true});
  });
 
