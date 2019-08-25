@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js">
+</script>
+<script src="/app/custom.js"></script>
+<script src="/app/services.js"></script>
+
+
+<div id="hotelsEdit">
+
+</div>
+
+<button type="submit" class="btn btn-primary"><span class="fa fa-search"></span> Search</button>
+<button type="submit" class="btn btn-secondary"><span class="fa fa-search"></span> Search</button>
+
+
+<script id="hotelsEditTemplate" type="text/x-handlebars-template">
+    <table  class="table">
+        <tr><td>First Name</td><td>Last Name</td><td>hotel</td><td>Email</td><td>Phone</td><td>Actions</td></tr>
+        {{#each this}}
+        <tr>
+            <td>
+                {{fname}}
+            </td>
+            <td>
+                {{lname}}
+            </td>
+            <td>
+                {{hotel}}
+            </td>
+            <td>
+                {{email}}
+            </td>
+            <td>
+                {{phone}}
+            </td>
+            <td>
+                <a href="/app/hoteledit.html?id={{id}}">edit</a>
+                <a href="/app/hoteldelete?id={{id}}">delete</a>
+                <a href="/app/hotelproducts?id={{id}}">products</a>
+                <a href="/app/hotelinvoices?id={{id}}">invoices</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    
+</script>
+
+
+
