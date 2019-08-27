@@ -13,7 +13,7 @@ var getAllHotels = function (callback)
          },
     });
 }
-var postHotel = function(data,callbak,error)
+var postHotel = function(data,callbak)
 {
     $.ajax({
         type: "POST",
