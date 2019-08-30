@@ -29,8 +29,11 @@ app.get("/api/hotels/:id", (req, res) => {
 
 app.post('/api/hotels', function (req, res) {
    const item = req.body;
+   var exist = hotels.find(x=>x.email === item.email);
+   if(exist)
+      return res.json({code:false});
    hotels.push(item);
-   return res.json({message:true});
+      return res.json({code:true});
 });
 
 app.delete("/api/hotels/:id", (req, res) => {
