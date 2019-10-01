@@ -21,14 +21,14 @@
     <link rel="stylesheet" href="css/element.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="css/responsive.css">
-    
+    <link rel="stylesheet" href="css/custom.css">
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css" >
     <!-- Animation -->
     <link rel="stylesheet" href="css/animate.css" >
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- link modernizr js -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="js/vendor/jquery-1.12.0.min.js"></script>
@@ -42,6 +42,22 @@
           </script>
     <script src="catalog.js">
     </script>
+
+    <style>
+      .table-content{
+        display:none;
+      }
+      .comapniesListing div{
+        width:100%;
+      }
+      .subCat div{
+        width:100%;
+      
+      }
+      .count{
+        float:right;
+      }
+    </style>
 </head>
 
 <body>
@@ -52,31 +68,37 @@
 }
 
 .filterSelected{
-    background:red;
+  cursor:pointer;
+    background:#af9a79;
+    color:white;
 }
 .filterNotSelected{
+    cursor:pointer;
+
     background:white;
 }
 .categoryClass,.companyClass{
     cursor: pointer;
 }
 .categoryClass:hover,.companyClass:hover{
-    background:#f1f1f1;
+  background:#af9a79;
+  color:white;
 }
 
 
 .containerDiv{    margin: 25px 0;}
-.CategoriesAndSubCategories{}
+
 .Categoriesitem{
     height: 100%;
     background: #ffe7e7;
 }
 .categorieTitle{
+    text-align:center;
     display: block;
     background: #750003;
     color: white;
     padding: 10px;
-    font-size: 19px;
+    font-size: 14px;
 }
 .subCat{
     padding: 10px;
@@ -85,34 +107,35 @@
     margin-bottom: 5px;
     display: inline-block;
     cursor: pointer;
-    border: 1px solid #750003;
+    border-bottom: 1px solid #750003;
     padding: 4px;
+	  font-size:14px;
 }
 
-.companiesAndProducts{}
-.CompaniesDiv{}
+
 .CompaniesDiv .title{
     display: block;
     background: #ae7e46;
     color: white;
     padding: 10px;
-    font-size: 19px;
+    font-size: 16px;
 } 
 .comapniesListing{
     padding: 10px;
 }
 .comapniesListing .item{
+  font-size:14px;
     margin-bottom: 5px;
     display: inline-block;
     cursor: pointer;
-    border: 1px solid #750003;
+    border-bottom: 1px solid #750003;
     padding: 4px;
 }
 .productTitle{   display: block;
     background: #ae7e46;
     color: white;
     padding: 10px;
-    font-size: 19px;}
+    font-size: 16px;}
 
     .welcomeText{
     display: table;
@@ -134,7 +157,7 @@
     box-shadow: 0 2px 5px #f1f1f1;
 }
 .plan-title {
-    font-size: 22px !important;
+    font-size: 18px !important;
     letter-spacing: 2px;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -175,7 +198,7 @@
 }
 .prising-content > p {
     color: #555;
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
     font-weight: 600;
     padding: 0 10px 0 15px;
@@ -253,8 +276,8 @@ a.button-small {
                 <li><a class="csIcon" href="support.html"><i class="fa fa-commenting" aria-hidden="true"></i></a></li>
                 <li>
                   <div class="log-reg d-flex">
-                    <button type="button" class="btn loginBtn">LOG IN</button>
-                    <button type="button" class="btn registerBtn">REGISTER</button>
+                    <button type="button" class="btn loginBtn">Welcome</button>
+                    <button type="button" class="btn registerBtn">User</button>
                   </div>
                 </li>
               </ul>
@@ -295,7 +318,7 @@ a.button-small {
                   <div> Hotel In A Box <i class="fa fa-angle-down"></i></div>
                   </a>
                   <ul>
-                    <li><a href="joining_darke.html"><i class="fa fa-angle-right"></i><b> Join DAREK </b></a></li>
+                    <li><a href="joining_darke.html"><i class="fa fa-angle-right"></i><b> Browse Catalog </b></a></li>
                     <li><a href="service_provider.html"><i class="fa fa-angle-right"></i><b> Become a Service Provider </b></a></li>
                   </ul>
                 </li>
@@ -456,11 +479,11 @@ a.button-small {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="banner">
-                            <h2>Joining DAREK as a Hotel</h2>
+                            <h2>Product Catalog</h2>
                             <ul class="page-title-link">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="hotelinabox.html">Hotel In A Box</a></li>
-                                <li>Join DAREK</li>
+                                <li>Products</li>
                             </ul>
                         </div>
                     </div>
@@ -483,16 +506,16 @@ a.button-small {
                             
                             <div class="col-md-12 wow fadeInLeft delay-02s">
                                 <div class="service-text">
-                                <h3>Join <span> DAREK </span></h3>
+                                <h3>Browse <span> Catalog </span></h3>
                                    
                                 <div id="results"></div>
 
                                 <script id="productTemplate" type="text/x-handlebars-template">
                                     <div class="containerDiv">
                                         <div id="tdcategories" class="CategoriesAndSubCategories row mx-0">
-                                            <div class="col-2">
+                                            <div class="col-sm-12 col-lg-2">
                                                 <div class="welcomeText text-center">
-                                                       <span> Darek Welcome</span>
+                                                       <span> Products</span>
                                                 </div>
                                             </div>
                                             {{#each categories}}
@@ -502,7 +525,7 @@ a.button-small {
                                                         {{#if values}} 
                                                         <div class="subCat">
                                                                 {{#each values}}
-                                                                        <div class="subCatItem categoryClass" data-id="{{id}}" data-filter='false' onclick='toggleFilter(this,"cat")'>({{id}}) {{title}} - <span class="count"></span></div>
+                                                                        <div class="subCatItem categoryClass" data-id="{{id}}" data-filter='false' onclick='toggleFilter(this,"cat")'>{{title}} - <span class="count"></span></div>
                                                                 {{/each}}
                                                         </div>
                                                         {{/if}}
@@ -510,51 +533,52 @@ a.button-small {
                                             </div>
                                             {{/each}}
                                         </div>
-                                        <div class="companiesAndProducts row mx-0 py-2">
-                                            <div class="col-2 px-1">
+                                        <div class="companiesAndProducts row mx-0 py-2 row-eq-height">
+                                            <div class="col-lg-2 col-sm-12 px-1">
                                                 <div id="tdcompanies" class="CompaniesDiv">
-                                                    <div class="title">All Comapnies</div>
+                                                    <div class="title">All Companies</div>
                                                     <div class="comapniesListing">
                                                         {{#each companies}}
-                                                            <div class="item companyClass" data-filter='false' data-id="{{id}}" onclick='toggleFilter(this,"com")'>({{id}}){{title}} - <span class="count"></span></div>
+                                                            <div class="item companyClass" data-filter='false' data-id="{{id}}" onclick='toggleFilter(this,"com")'>{{title}}  <span class="count"></span></div>
                                                         {{/each}}
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-10 px-1">
-                                                <div class="productTitle">All Products</div>
+                                            <div class="col-lg-10 col-sm-12 px-1">
+                                                <div class="productTitle" style="text-align:center">Our Products</div>
                                                 <div  id="tdresults" class="allProducts">
-                                                    <div class="row mx-0">
+                                                    <div class="row mx-0 row-eq-height">
                                                         
                                                             {{#each products}}
-                                                            <div class="col-4">
-                                                            <div class="item productClass" data-visible='true' data-cat="{{categoryid}}" data-com="{{companyid}}">({{categoryid}} - {{companyid}}) {{title}}</div>
+                                                            <div class="col-lg-4 col-sm-12 col-md-6 each-product productClass" data-visible='true'  data-cat="{{categoryid}}" data-com="{{companyid}}" >
+                                                         
                                                                 <div class="price-item b-shadow text-center">
                                                                         <div class="prising-head">
-                                                                            <p class="plan-title">Facility Management for <br>Dynamics</p>
+                                                                            <p class="plan-title">{{title}}</p>
                                                                         </div>
                                                                         <div class="prising-content">
+																		<div class="prising-content-body">
                                                                         <div class="price-tage-wrapper">
-                                                                            <span> Subscription Period: </span>
-                                                                            <p> 1 Year</p>
+                                                                            <span> Subscription Period:  </span>
+                                                                            <p>{{subscritionPeriod}}</p>
                                                                                 
-                                                                                <h3 class="price-value">11.00 QAR </h3>
+                                                                                <h3 class="price-value">{{price}} {{currency}} </h3>
                                                                                 <span>Per Month</span>                                        
-                                                                            </div><br>
-                                                                            <p>Dynamics Facility is a specialized business software solution for facility management companies. Based on Microsoft Dynamics technology, Dynamics Facility covers the business process related to administrative management of buildings, floors, locations, adjacent areas, as well as their corresponding building costs, expenses and receivables, documents (such as contracts and annexes).</p>
-                                                                            <p>All you need for your facility management business!</p>
+                                                                            </div>
+																			</div>
+																			<br>
+                                                                            <p>{{description}}</p>
+                                                                            <p>{{tableofContentTitle}}</p>
                                                                             <ul class="table-content">
-                                                                                <li><i class="fa fa-check"></i> Accounts </li>
-                                                                                <li><i class="fa fa-check"></i> Contacts  </li>
-                                                                                <li><i class="fa fa-check"></i> Buildings Floors </li>
-                                                                                <li><i class="fa fa-check"></i> Locations </li>
-                                                                                <li><i class="fa fa-check"></i> Annexes </li>
-                                                                                <li><i class="fa fa-check"></i> Contracts References </li>
-                                                                                <li><i class="fa fa-check"></i> Intranet and team sites with SharePoint </li> 
+																			{{#each tableofContentlist}}
+																			<li><i class="{{iconClass}}"></i> {{content}}</li>
+																		    {{/each}}
+                                                                                
                                                                             </ul>
                                                                         </div>
                                                                         <div class="prising-footer">
-                                                                            <a href="https://vf.staging.meeza.net/index.php?redirect=DAREK_FM_Dynamics" class="button-small">Buy</a>
+                                                                            <!-- <a href="https://vf.staging.meeza.net/index.php?redirect=DAREK_FM_Dynamics" class="button-small">Buy</a> -->
+																			  <a href="buy.html?product={{title}}&price={{price}} {{currency}}" class="button-small">Buy</a>
                                                                         </div>
                                                                     </div> 
                                                                 </div>                            

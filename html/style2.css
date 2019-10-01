@@ -4667,7 +4667,7 @@ article.single-blog-post {
 
 .price-item {
     border: 1px solid #ddd; 
-    padding: 40px 0; 
+    padding: 10px 0 !important; 
 }
 
 .price-tage-wrapper {
@@ -5069,7 +5069,9 @@ textarea:focus {
   margin-left: -1px;
   margin-right: -1px;
       height: 38px;
-    line-height: 34px;
+
+	/*commented by imran */
+   /* line-height: 34px;*/
 }
 .log-reg button:hover {
   opacity: 0.9;

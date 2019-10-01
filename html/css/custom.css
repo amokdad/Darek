@@ -1,0 +1,104 @@
+.welcomeText
+{
+text-shadow: 1px 1px #750003;
+}
+.productTitle {
+  
+    font-weight: bold;
+}
+.subCatItem {
+    
+    font-size: small;
+}
+.comapniesListing .item {
+    
+    font-size: 12px;
+}
+.Categoriesitem
+{
+border-radius:5px !important;
+border:1px solid #750003;
+font-weight:bold;
+}
+div.col.px.1
+{
+margin-bottom:20px;
+border:10px solid red !important;
+}
+
+
+.productTitle , .CompaniesDiv .title
+{
+background-color:#750003 !important;
+}
+
+.CompaniesDiv
+{
+border:1px solid #750003 !important;
+font-weight: bold;
+}
+
+.allProducts .col-lg-4, .allProducts .col-sm-12,.allProducts .col-md-6
+{
+
+padding-left:0px !important;
+padding-right:0px !important;
+
+
+}
+.allProducts .price-item
+{
+border-radius:5px;
+margin:5px;
+}
+.allProducts .price-item p
+{
+ 
+}
+
+.prising-content-body
+{
+
+  position: relative;
+  margin-bottom:10px;
+}
+.prising-content-body:after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -20px;
+    width: 0;
+    height: 0;
+    border-top: solid 20px #bea886;
+
+    border-left: solid 20px transparent;
+    border-right: solid 20px transparent;
+}
+
+.categorieTitle
+{
+position:relative;
+margin-bottom:8px;
+}
+.categorieTitle:after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-top: solid 10px #750003;
+
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+.prising-content-body:hover:after {
+    
+    border-top: solid 30px #8a1638;
+}
+
+
+

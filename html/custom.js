@@ -24,7 +24,12 @@ $(document).ready(function(){
             description:$('#inputDescription').val(),
             password:$('#inputPassword').val()
         };
-
+        sendConfirmEmail(data,function(){
+            $('#tdSuccess').show();
+            $('#tdError').hide();
+            $('#btnMokSubmit').show();
+        });
+        /*
         postHotel(data,function(d){
             if(d.code){
                 console.log(data);
@@ -42,7 +47,7 @@ $(document).ready(function(){
                 $('#tdError').show();
                 $('#btnMokSubmit').show();
             }
-        });
+        });*/
     })
 
     $('#btnVerifySubmit').click(function(){

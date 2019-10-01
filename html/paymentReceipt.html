@@ -21,14 +21,16 @@
     <link rel="stylesheet" href="css/element.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="css/responsive.css">
-    
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+	
+	
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     <!-- FontAwesome -->
-        <link rel="stylesheet" href="css/font-awesome.min.css" >
-        <!-- Animation -->
-        <link rel="stylesheet" href="css/animate.css" >
-
+    <link rel="stylesheet" href="css/font-awesome.min.css" >
+    <!-- Animation -->
+    <link rel="stylesheet" href="css/animate.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- link modernizr js -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="js/vendor/jquery-1.12.0.min.js"></script>
@@ -38,10 +40,56 @@
     </script>
     <script src="custom.js">
     </script>
+	<script src="buy.js">
+    </script>
+        <script src="handlebar.js">
+          </script>
+      <script>
+	  var receiptInfo;
+	 
+	if(getParameterByName("d") ==null)
+	{
+	location.replace("catalog.html");
+	}
+	else
+	{
+	var receiptInfo = JSON.parse(getParameterByName("d"));
+	
+	}
+	
+    </script>
 </head>
 
 <body>
+    <style>
     
+.logo{
+    width:200px;
+}
+
+address
+{
+margin-left:-5px !important;
+}
+.rRightSection p
+{
+margin-right:-5px;
+}
+
+.receiptDiv > div
+{
+border:1px solid #888888;;
+margin-top:10px;
+  box-shadow: 5px 5px #f8f9fa;
+  background-image:url(img/receiptbg.png);
+   background-repeat: no-repeat;
+  
+  background-position:bottom left; 
+  background-color:white;
+border-top-left-radius:20px;
+border-bottom-right-radius:20px;
+}
+    </style>
 
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -91,8 +139,8 @@
                 <li><a class="csIcon" href="support.html"><i class="fa fa-commenting" aria-hidden="true"></i></a></li>
                 <li>
                   <div class="log-reg d-flex">
-                    <button type="button" class="btn loginBtn">LOG IN</button>
-                    <button type="button" class="btn registerBtn">REGISTER</button>
+                    <button type="button" class="btn loginBtn">Welcome</button>
+                    <button type="button" class="btn registerBtn">User</button>
                   </div>
                 </li>
               </ul>
@@ -289,109 +337,85 @@
         
         
         <!-- Start Banner Area -->
-        <div class="banner-area banner-bg-joindarek ptb-120 bg-opacity-black-40 ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="banner">
-                            <h2>Joining DAREK as a Hotel</h2>
-                            <ul class="page-title-link">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="hotelinabox.html">Hotel In A Box</a></li>
-                                <li>Join DAREK</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- End Banner Area -->
         <!-- Start Main Content Wrapper -->
         <div class="main-content-wrapper">
-        
-        
-        
+       
+		   <div class="container">
+    <div class="row receiptDiv">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>DAREK.COM</strong>
+                        <br>
+                        P.O. Box 2019
+                        <br>
+                        Qatar, Mi 48000
+                        <br>
+                        <abbr title="Phone">P:</abbr> (212) 484-123
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right rRightSection">
+                    <p>
+                        <em><script>document.write(receiptInfo.date);</script></em>
+                    </p>
+                    <p>
+                        <em>Receipt #: <script>document.write(receiptInfo.receiptNo);</script></em>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center;" style="margin-left:5px;">
+                   <img src="img/logo.png" alt="DAREK" width="80" height="40">
+                   <h1> Receipt</h1>
+                </div>
+                </span>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-center">Price</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-md-9"><em><script>document.write(receiptInfo.product);</script></em></h4></td>
+                           
+                            <td class="col-md-1 text-center"><script>document.write(receiptInfo.price);</script></td>
+							
+                          
+                        </tr>
+                      
+                      
+                        <tr>
+                          
+                          
+							<td colspan="2"  class="text-right"><h4><strong style="color:#750003 !important">Total: <script>document.write(receiptInfo.price);</script></strong></h4></td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <h1 style="text-align:center; padding-left:5px; color:#750003 !important">
+                        Thank you for your order.
+                    </h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+		</div>
+     
+
+		
                                     
             
             <!-- Start About Text Section -->
             <div class="content-section-area ptb-100 bg-grey">
-                <div class="container">
-                    <div class="row">
-                        <div class="service-wrapper">
-                            
-                            <div class="col-md-8 wow fadeInLeft delay-02s">
-                                <div class="service-text">
-                                <h3>Join <span> DAREK </span></h3>
-                                    <style>
-                                      .MokTable{
-                                        width:100%;
-                                      }
-                                      .MokTable td{
-                                        padding:10px;
-                                      }
-                                      .MokTable td input{
-                                        width:100%;
-                                        background:#f1f1f1;
-                                        border:0;
-                                        height: 30px;
-                                        padding-left:10px;
-                                      }
-                                      .MokTable td textarea{
-                                        width:100%;
-                                        background:#f1f1f1;
-                                        border:0;
-                                        height: 100px;
-                                        padding-left:10px;
-                                      }
-                                      .MokTable .MokLabel{
-                                        font-weight: 900;
-                                      }
-                                      .MokTable .Mokbtn{
-                                        width:100px !important;
-                                        color:white;
-                                        background: #750003  !important;
-                                      }
-                                      .MokTable .MokRequired{
-                                        color:red;
-                                        padding-left:5px;
-                                      }
-                                    </style>
-                                    <table  class="MokTable"> 
-                                      <tr>
-                                        <td>
-                                          <span class="MokLabel">Email<span class="MokRequired">*</span></span>
-                                          <br/>
-                                          <input id="inputEmail"/>
-                                        </td>
-                                      
-                                      </tr>
-                                      
-                                      <tr><td style="text-align: right">
-                                        <input id="btnVerifySubmit" class="Mokbtn" type="button" value="Verify Email">
-                                      </td></tr>
-                                      <tr id="tdSuccess" style="display: none"><td><div style="text-align: center;padding:10px;background:green;color:white">Your email has been verified, , please click <a href="catalog.html">here</a> to browse our catalog</div></td></tr>
-                                      <tr id="tdError" style="display: none"><td><div style="text-align: center;padding:10px;background:red;color:white">Failed to register your email address, it already exists</div></td></tr>
-                                    </table>
-                                    <script>
-                                      $(document).ready(function(){
-                                          $('#inputEmail').val(getUrlParameter("email"));
-                                      })
-                                    </script>
-                                </div>
-                                
-                                
-                              
-                            </div>
-                            
-                            <div class="col-md-4 wow fadeInRight delay-02s">
-                                <div class="service-thumb">
-                                    <img src="img/about/hotelinabox/1.png" class="img-responsive" alt="Support Inquiries">
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <!-- End About Text Section -->
             
@@ -518,7 +542,7 @@
                         
                         
                     </div>
-                </div>
+                </div> 
             </div>
             
             
@@ -542,7 +566,14 @@
     </div>
     <!-- End Main Wrapper -->
     <!-- ALL JQUERY  -->
-
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="services.js">
+    </script>
+    <script src="custom.js">
+    </script>
+	
 </body>
  
 
