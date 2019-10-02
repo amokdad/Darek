@@ -7,9 +7,9 @@ var data = {
     ],
     companies: [
         {id:1,title:"Advancya"},
-        {id:2,title:"MOTC"},
-        {id:3,title:"MOPH"},
-        {id:4,title:"Oracle"},
+        {id:2,title:"Hotels"},
+        {id:3,title:"Expedia"},
+        {id:4,title:"Microsoft"},
 		{id:5,title:"Agile Engine"},
 		{id:6,title:"Paragent"},
 		{id:7,title:"Fingent"},
