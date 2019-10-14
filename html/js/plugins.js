@@ -26,7 +26,7 @@ $(document).ready(function(){
     $('a').each(function(){
 
         var url = $(this).attr("href");
-        if(url != "joining_darkev2.html"  && url != "index.html" && url != "catalog.html" && url.indexOf("buy.html") == -1){
+        if(url!="facility_management.html" && url!= "hotelinabox.html" && url != "joining_darkev2.html"  && url != "index.html" && url != "catalog.html" && url.indexOf("buy.html") == -1){
             $(this).attr("href","javascript:void(0)");
         }
 
