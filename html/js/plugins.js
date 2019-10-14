@@ -23,14 +23,29 @@
 $(document).ready(function(){
 
     
-    $('a').each(function(){
+    if(window.location.href.toLowerCase().indexOf("full=true") == -1)
+    {
+        $('a').each(function(){
 
-        var url = $(this).attr("href");
-        if(url!="facility_management.html" && url!= "hotelinabox.html" && url != "joining_darkev2.html"  && url != "index.html" && url != "catalog.html" && url.indexOf("buy.html") == -1){
-            $(this).attr("href","javascript:void(0)");
-        }
+            var url = $(this).attr("href");
+            if(url!="facility_management.html" && url!= "hotelinabox.html" && url != "joining_darkev2.html"  && url != "index.html" && url != "catalog.html" && url.indexOf("buy.html") == -1){
+                $(this).attr("href","javascript:void(0)");
+            }
 
-    })
+        })
+    }
+    else{
+        $('a').each(function(){
+            var url = $(this).attr("href");
+            if(url.indexOf("?") != -1)
+            {
+                url+="&full=true"
+            }else{
+                url+="?full=true"
+            }
+            $(this).attr("href",url);
+        });
+    }   
 
 })
 
