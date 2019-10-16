@@ -14,8 +14,35 @@ let hotels = require('./data/hotels');
 
 app.post('/api/GetData',function(req,res){
 
-   var boxes = req.body.boxes;
-   var nameen,namear,qid,doe,dob,occ,nat,dates;
+
+
+  
+
+   var boxes = [];
+   var region = req.body.regions;
+   
+   for(var i in region){
+     
+      for(var l in region[i].lines)
+      {
+          var txt = "";
+          var b = region[i].boundingBox.split(',');
+          for(var w in region[i].lines[l].words)
+          {
+              console.log(region[i].lines[l]);
+              txt += region[i].lines[l].words[w].text + " ";
+             // var b = w.boundingBox.split(',');
+              //boxes.push([parseInt(b[0]), parseInt(b[1]), parseInt(b[2]), parseInt(b[3]),w.text])
+          }
+          boxes.push([parseInt(b[0]), parseInt(b[1]), parseInt(b[2]), parseInt(b[3]),txt.trim()])
+         
+      }
+   }
+   
+   console.log(boxes);
+
+   var nameen,namear,qid,doe,dob,occ,nat;
+   var dates = [];
    for(var i in boxes)
    {
       val = boxes[i];
@@ -42,7 +69,7 @@ app.post('/api/GetData',function(req,res){
       {
           if(txt.indexOf("/") != -1)
           {
-              var t = txt.replaceAt(2,"/").replaceAt(5,"/");
+              var t = txt;
               dates.push(t);
           }
       }
