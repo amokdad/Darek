@@ -12,6 +12,70 @@ app.use("/app",express.static('html'))
 
 let hotels = require('./data/hotels');
 
+app.post('/api/GetData',function(req,res){
+
+   var boxes = req.body.boxes;
+   var nameen,namear,qid,doe,dob,occ,nat,dates;
+   for(var i in boxes)
+   {
+      val = boxes[i];
+      var txt = val[4];
+      if(i == boxes.length-1 && (txt.indexOf("Name") != -1 || txt.indexOf(":") != -1 ))
+      {
+          nameen = txt.replace(":","").trim().replace("Name","");
+      }
+      if(i == boxes.length-2 && (txt.indexOf("الاسم") != -1 || txt.indexOf(":") != -1 ))
+      {
+          namear = txt.replace(":","").trim().replace("الاسم","");
+      }
+      if(txt.length == 11)
+      {
+          numbersCount = 0;
+          for(var l in txt)
+          {
+              numbersCount += (isNaN(txt[l]) ? 0 : 1);
+          }
+          if(numbersCount > 9)
+          qid = txt;
+      }
+      if(txt.length == 10)
+      {
+          if(txt.indexOf("/") != -1)
+          {
+              var t = txt.replaceAt(2,"/").replaceAt(5,"/");
+              dates.push(t);
+          }
+      }
+      if(txt == ":Nationality")
+      {
+          var y = val[1];
+          for(var j in boxes){
+         
+              r = boxes[j];
+              if(r[1] <= y+10 && r[1] >= y-10 && j != i)
+              {
+                  nat = r[4];
+              }
+          }
+
+      }
+      if(txt == ":Occupation")
+      {
+          var y = val[1];
+          for(var j in boxes){
+               r = boxes[j];
+              if(r[1] <= y+10 && r[1] >= y-10 && j != i)
+              {
+                  occ = r[4];
+              }
+          }
+
+      }
+  }
+  return res.json({nameen:nameen,namear:namear,qid:qid,occ:occ,nat:nat,doe:doe,dob:dob});
+
+
+})
 
 app.get('/api/hotels', function (req, res) {
     return res.json(hotels);
