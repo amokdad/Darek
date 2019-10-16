@@ -41,7 +41,13 @@ app.post('/api/GetData',function(req,res){
    
    console.log(boxes);
 
-   var nameen,namear,qid,doe,dob,occ,nat;
+   var nameen='';
+   var namear = '';
+   var qid = '';
+   var doe = '';
+   var dob = '';
+   var occ = '';
+   var nat='';
    var dates = [];
    for(var i in boxes)
    {
@@ -99,6 +105,26 @@ app.post('/api/GetData',function(req,res){
 
       }
   }
+  if(dates.length == 2)
+  {
+     dob = dates[0];
+     doe = dates[1];
+  }
+  if(nameen == '')
+  {
+     if(boxes[boxes.length-1][4] == boxes[boxes.length-1][4].toUpperCase())
+     {
+        nameen = boxes[boxes.length-1][4];
+     }
+  }
+  if(nat == '')
+  {
+   if(boxes[boxes.length-2][4] == boxes[boxes.length-2][4].toUpperCase())
+   {
+      nat = boxes[boxes.length-2][4];
+   }
+  }
+
   return res.json({nameen:nameen,namear:namear,qid:qid,occ:occ,nat:nat,doe:doe,dob:dob});
 
 
